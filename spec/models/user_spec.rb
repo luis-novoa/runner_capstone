@@ -2,8 +2,8 @@ require 'rails_helper'
 require 'spec_helper'
 
 RSpec.describe User, type: :model do
-  let(:test_user) {User.new}
-  let(:test_user2) {User.new(name: 'test')}
+  let(:test_user) { User.new }
+  let(:test_user2) { User.new(name: 'test') }
 
   describe 'validations' do
     it 'check for name presence' do
