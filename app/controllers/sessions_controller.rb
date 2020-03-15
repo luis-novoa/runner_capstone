@@ -1,8 +1,14 @@
 class SessionsController < ApplicationController
   def create
     @user = User.find_by(user_params)
-    session[:user_id] = @user.id
-    redirect_to @user
+    if @user
+      session[:user_id] = @user.id
+      redirect_to @user
+    else
+      flash.now[:alert] = "User doesn't exist. Try to sign up!"
+      @user = User.new(user_params)
+      render '/users/new'
+    end
   end
 
   def destroy
