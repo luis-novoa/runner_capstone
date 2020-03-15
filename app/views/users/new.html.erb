@@ -1,2 +1,8 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Sign Up or Log In</h1>
+
+<%= form_for @user do |f| %>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name %> <br>
+  <%= f.submit 'Log In', formaction: sessions_path %>
+  <%= f.submit 'Sign Up' %>
+<% end %>
