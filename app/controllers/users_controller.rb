@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  include ApplicationHelper
-
   def new
     if session[:user_id]
       @user = current_user

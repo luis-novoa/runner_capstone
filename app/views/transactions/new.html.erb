@@ -1,0 +1,9 @@
+<h1> Create New Transaction </h1>
+
+<%= form_for @transaction do |f| %>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name %> <br>
+  <%= f.label :amount %> <br>
+  <%= f.number_field :amount %> <br>
+  <%= f.submit 'Create' %>
+<% end %>

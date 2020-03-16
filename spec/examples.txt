@@ -1,25 +1,29 @@
-example_id                                            | status  | run_time        |
------------------------------------------------------ | ------- | --------------- |
-./spec/controllers/sessions_controller_spec.rb[1:1:1] | failed  | 0.02854 seconds |
-./spec/controllers/sessions_controller_spec.rb[1:2:1] | failed  | 0.00263 seconds |
-./spec/controllers/users_controller_spec.rb[1:1:1]    | failed  | 0.01225 seconds |
-./spec/helpers/sessions_helper_spec.rb[1:1]           | pending | 0.00001 seconds |
-./spec/helpers/users_helper_spec.rb[1:1]              | pending | 0 seconds       |
-./spec/models/transaction_spec.rb[1:1:1]              | passed  | 0.00904 seconds |
-./spec/models/transaction_spec.rb[1:1:2]              | passed  | 0.01321 seconds |
-./spec/models/transaction_spec.rb[1:1:3]              | passed  | 0.01254 seconds |
-./spec/models/transaction_spec.rb[1:1:4]              | passed  | 0.01372 seconds |
-./spec/models/transaction_spec.rb[1:1:5]              | passed  | 0.00991 seconds |
-./spec/models/transaction_spec.rb[1:1:6]              | passed  | 0.01327 seconds |
-./spec/models/transaction_spec.rb[1:1:7]              | passed  | 0.05147 seconds |
-./spec/models/user_spec.rb[1:1:1]                     | passed  | 0.00917 seconds |
-./spec/models/user_spec.rb[1:1:2]                     | passed  | 0.00535 seconds |
-./spec/models/user_spec.rb[1:1:3]                     | passed  | 0.00624 seconds |
-./spec/models/user_spec.rb[1:1:4]                     | passed  | 0.01301 seconds |
-./spec/views/sessions/create.html.erb_spec.rb[1:1]    | pending | 0 seconds       |
-./spec/views/sessions/destroy.html.erb_spec.rb[1:1]   | pending | 0.00001 seconds |
-./spec/views/users/new.html.erb_spec.rb[1:1]          | passed  | 0.02289 seconds |
-./spec/views/users/new.html.erb_spec.rb[1:2]          | passed  | 0.02424 seconds |
-./spec/views/users/new.html.erb_spec.rb[1:3]          | passed  | 0.02597 seconds |
-./spec/views/users/new.html.erb_spec.rb[1:4]          | passed  | 0.55951 seconds |
-./spec/views/users/new.html.erb_spec.rb[1:5]          | passed  | 0.04183 seconds |
+example_id                                             | status  | run_time        |
+------------------------------------------------------ | ------- | --------------- |
+./spec/controllers/sessions_controller_spec.rb[1:1:1]  | failed  | 0.02854 seconds |
+./spec/controllers/sessions_controller_spec.rb[1:2:1]  | failed  | 0.00263 seconds |
+./spec/controllers/users_controller_spec.rb[1:1:1]     | failed  | 0.01225 seconds |
+./spec/helpers/sessions_helper_spec.rb[1:1]            | pending | 0.00001 seconds |
+./spec/helpers/transactions_helper_spec.rb[1:1]        | pending | 0.00001 seconds |
+./spec/helpers/users_helper_spec.rb[1:1]               | pending | 0 seconds       |
+./spec/models/transaction_spec.rb[1:1:1]               | passed  | 0.06803 seconds |
+./spec/models/transaction_spec.rb[1:1:2]               | passed  | 0.01214 seconds |
+./spec/models/transaction_spec.rb[1:1:3]               | passed  | 0.00886 seconds |
+./spec/models/transaction_spec.rb[1:1:4]               | passed  | 0.01109 seconds |
+./spec/models/transaction_spec.rb[1:1:5]               | passed  | 0.00914 seconds |
+./spec/models/transaction_spec.rb[1:1:6]               | passed  | 0.01091 seconds |
+./spec/models/transaction_spec.rb[1:1:7]               | passed  | 0.01234 seconds |
+./spec/models/user_spec.rb[1:1:1]                      | passed  | 0.00853 seconds |
+./spec/models/user_spec.rb[1:1:2]                      | passed  | 0.0069 seconds  |
+./spec/models/user_spec.rb[1:1:3]                      | passed  | 0.00452 seconds |
+./spec/models/user_spec.rb[1:1:4]                      | passed  | 0.00625 seconds |
+./spec/views/layouts/application.html.erb_spec.rb[1:1] | failed  | 0.13561 seconds |
+./spec/views/sessions/create.html.erb_spec.rb[1:1]     | pending | 0 seconds       |
+./spec/views/sessions/destroy.html.erb_spec.rb[1:1]    | pending | 0.00001 seconds |
+./spec/views/transactions/new.html.erb_spec.rb[1:1]    | passed  | 0.07548 seconds |
+./spec/views/users/new.html.erb_spec.rb[1:1]           | passed  | 0.05749 seconds |
+./spec/views/users/new.html.erb_spec.rb[1:2]           | passed  | 0.04225 seconds |
+./spec/views/users/new.html.erb_spec.rb[1:3]           | passed  | 0.03093 seconds |
+./spec/views/users/new.html.erb_spec.rb[1:4]           | passed  | 0.02888 seconds |
+./spec/views/users/new.html.erb_spec.rb[1:5]           | passed  | 0.04 seconds    |
+./spec/views/users/show.html.erb_spec.rb[1:1]          | passed  | 0.02195 seconds |
