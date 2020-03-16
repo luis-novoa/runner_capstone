@@ -21,8 +21,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @transactions = current_user.transactions
-    # @user = current_user
+    @user = current_user
+    if @user.respond_to?(:transactions)
+      @transactions = @user.transactions
+    end
   end
 
   private
