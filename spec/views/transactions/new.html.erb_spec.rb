@@ -32,4 +32,11 @@ RSpec.describe "transactions/new.html.erb", type: :feature do
     click_button 'Create'
     expect(page).to have_selector '.alert'
   end
+
+  scenario "there is a link to go back to the user's page" do
+    login
+    visit new_transaction_path
+    click_link '<< Go Back'
+    expect(current_path).to eq(user_path(test_user))
+  end
 end
