@@ -1,2 +1,7 @@
 <h1>All Transactions </h1>
 <%= link_to 'Create new transaction', new_transaction_path %>
+<% @transactions.each do |transaction| %>
+  <p>Name: <%= transaction.name %></p> <br>
+  <p>Amount: <%= transaction.amount %></p> <br>
+  <p>Created_at: <%= transaction.created_at %></p> <br>
+<% end %>
