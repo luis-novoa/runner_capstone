@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
+  include ApplicationHelper
+
   def new
-    @user = User.new
+    if session[:user_id]
+      @user = current_user
+      redirect_to @user
+    else
+      @user = User.new
+    end
   end
 
   def create
@@ -16,7 +23,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
+    @user = current_user
   end
 
   private
