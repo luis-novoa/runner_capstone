@@ -2,6 +2,7 @@
 <%= link_to 'Create New Group', new_group_path %>
 <% @all_groups.each do |group| %>
   <p>Name: <%= group.name %></p>
-  <!-- <p>Icon: <%= group.icon %></p> -->
-  <p>Created_at: <%= transaction.created_at %></p> <br>
+  
+  <p>Icon: <%= content_tag(:i, '', class: "fas fa-#{group.icon}") %></p>
+  <p>Created_at: <%= group.created_at %></p> <br>
 <% end %>
