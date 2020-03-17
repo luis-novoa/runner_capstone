@@ -15,12 +15,12 @@ class GroupsController < ApplicationController
   end
 
   def index
-    @all_groups = Group.all
+    @all_groups = Group.all.order(:name)
   end
 
   def show
     @group = Group.find(params[:id])
-    @transactions = @group.transactions
+    @transactions = @group.transactions.order(:created_at).reverse_order
   end
 
   private
