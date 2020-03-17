@@ -1,5 +1,6 @@
 <h1>All my Transactions </h1>
 <%= link_to 'Create new transaction', new_transaction_path %>
+<p>Total amount: <%= @transactions.sum(:amount) %></p>
 <% @transactions.each do |transaction| %>
   <p>Name: <%= transaction.name %></p>
   <p>Amount: <%= transaction.amount %></p>

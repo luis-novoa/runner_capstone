@@ -1,5 +1,6 @@
 <h1> <%= content_tag(:i, '', class: "fas fa-#{@group.icon}") %> <%= @group.name %> Transactions </h1>
 <%= link_to 'New Transaction', new_transaction_path(group_id: @group.id) %>
+<p>Total amount: <%= @transactions.sum(:amount) %></p>
 <% @transactions.each do |transaction| %>
   <p>Name: <%= transaction.name %></p>
   <p>Amount: <%= transaction.amount %></p>
