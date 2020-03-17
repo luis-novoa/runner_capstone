@@ -22,6 +22,12 @@ RSpec.describe Group, type: :model do
       expect(test_group.save).to eq(false)
     end
 
+    it "check if group's name is unique" do
+      test_group.name = 'test3'
+      test_group2.save
+      expect(test_group.save).to eq(false)
+    end
+
     it 'check for icon presence' do
       test_group.icon = nil
       expect(test_group.save).to eq(false)
