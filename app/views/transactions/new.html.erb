@@ -4,9 +4,9 @@
   <%= f.label :name %> <br>
   <%= f.text_field :name %> <br>
   <%= f.label :group_id %> <br>
-  <%= f.select :group_id, options_for_select(@group_select) %> <br>
+  <%= f.select :group_id, options_for_select(@group_select, params[:group_id]) %> <br>
   <%= f.label :amount %> <br>
   <%= f.number_field :amount %> <br>
   <%= f.submit 'Create' %>
 <% end %>
-<%= link_to '<< Go Back', user_path(current_user) %>
+<%= link_to '<< Go Back', :back %>

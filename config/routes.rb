@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   resources :transactions, only: [:new, :create]
   resources :groups, only: [:new, :create, :index, :show]
+  resources :groups do
+    resources :transactions
+  end
 end
