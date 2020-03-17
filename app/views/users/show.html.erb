@@ -3,5 +3,6 @@
 <% @transactions.each do |transaction| %>
   <p>Name: <%= transaction.name %></p>
   <p>Amount: <%= transaction.amount %></p>
+  <p>Group icon: <%= content_tag(:i, '', class: "fas fa-#{transaction.group.icon}") unless transaction.group.nil? %></p>
   <p>Created_at: <%= transaction.created_at %></p> <br>
 <% end %>

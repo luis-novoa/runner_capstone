@@ -1,0 +1,8 @@
+<h1> <%= content_tag(:i, '', class: "fas fa-#{@group.icon}") %> <%= @group.name %> Transactions </h1>
+<% @transactions.each do |transaction| %>
+  <p>Name: <%= transaction.name %></p>
+  <p>Amount: <%= transaction.amount %></p>
+  <p>Creator: <%= transaction.user.name %></p>
+  <p>Created_at: <%= transaction.created_at %></p> <br>
+<% end %>
+<%= link_to '<< Go Back', groups_path %>

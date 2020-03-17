@@ -18,6 +18,11 @@ class GroupsController < ApplicationController
     @all_groups = Group.all
   end
 
+  def show
+    @group = Group.find(params[:id])
+    @transactions = @group.transactions
+  end
+
   private
   def group_params
     params.require(:group).permit(:name, :icon)

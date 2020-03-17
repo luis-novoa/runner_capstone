@@ -3,7 +3,7 @@ class TransactionsController < ApplicationController
     logged_in?
     @transaction = Transaction.new
     @groups = Group.all
-    @group_select = []
+    @group_select = [['','']]
     @groups.each do |group|
       @group_select.push([group.name, group.id])
     end
