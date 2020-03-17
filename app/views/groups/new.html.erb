@@ -4,6 +4,6 @@
   <%= f.label :name %> <br>
   <%= f.text_field :name %> <br>
   <%= f.label :icon %> <br>
-  <%= f.text_field :icon %> <br>
+  <%= f.select :icon, options_for_select([["", 'walking'],["", 'biking'],["", 'horse'],["",'motorcycle'],["",'car-side'],["", 'subway'],["", 'ship'],["",'plane'],["",'space-shuttle']]), {}, { class: 'dropdown-icon' } %> <br>
   <%= f.submit 'Create' %>
 <% end %>

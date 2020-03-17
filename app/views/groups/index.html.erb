@@ -1,4 +1,5 @@
 <h1>All Groups</h1>
+<%= link_to 'Create New Group', new_group_path %>
 <% @all_groups.each do |group| %>
   <p>Name: <%= group.name %></p>
   <!-- <p>Icon: <%= group.icon %></p> -->
