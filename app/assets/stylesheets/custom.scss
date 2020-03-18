@@ -21,15 +21,22 @@ body {
   }
 }
 
-header {
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.top-bar {
   background: linear-gradient(to bottom, #3875c2, #2d609d);
   display: flex !important;
   flex-direction: row;
-  height: 10vh;
+  height: 7vh;
   align-items: center;
   justify-content: space-between;
   color: white;
-  padding: 0 5vw;
+  padding: 0 2.5vw;
   font-size: 3vh;
   h1 {
     margin-bottom: -0.6vh;
@@ -37,6 +44,15 @@ header {
   div {
     color: transparent;
   }
+}
+
+main {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #f1f3f2;
+}
+main > * {
+  background-color: white;
 }
 
 // Log in and sign up page
@@ -91,6 +107,76 @@ header {
 
 .user-menu {
   display: none;
+}
+
+// Index template
+
+.sum {
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5vw;
+}
+
+.name {
+  font-weight: bold;
+  color: #989da2;
+  font-size: 1.9vh;
+}
+
+.date {
+  color: #989da2;
+  font-size: 1.4vh;
+}
+
+.amount {
+  font-size: 2vh;
+  font-weight: bold;
+  color: #434b54;
+}
+
+.icon {
+  text-align: center;
+  font-size: 2vh;
+  color: #434b54;
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  width: 95vw;
+  margin: 2vh auto;
+  padding: 1.2vh 2vw;
+}
+
+.line {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.outer-square {
+  height: 14vh;
+  background-color: #5fb523;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-square {
+  border: solid white;
+  font-size: 5vw;
+  text-decoration: none;
+  color: white;
+  border-radius: 3px;
+  height: 10vh;
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // New transaction page
