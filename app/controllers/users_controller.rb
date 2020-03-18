@@ -9,13 +9,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    unless User.find_by(user_params)
-      @user = User.create(user_params)
+    @user = User.new(user_params)
+    if @user.save
       session[:user_id] = @user.id
       redirect_to @user
     else
-      flash.now[:alert] = 'User exists. Try to log in!'
-      @user = User.new(user_params)
+      flash.now[:alert] = @user.errors.full_messages
       render 'new'
     end
   end

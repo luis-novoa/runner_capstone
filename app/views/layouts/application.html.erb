@@ -11,9 +11,13 @@
   </head>
 
   <body>
-    <% if alert.present? %>
+    <% if flash.present? %>
       <div class="notification alert-danger">
-        <p> <%= alert %> </p>
+        <ul>
+          <% flash[:alert].each do |alert| %>
+            <li> <%= alert %> </li>
+          <% end %>
+        </ul>
       </div>
     <% end %>
     <% if session[:user_id] %>
