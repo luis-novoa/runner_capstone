@@ -21,13 +21,17 @@
       </div>
     <% end %>
     <% if session[:user_id] %>
-      <nav class='user-menu'>
-        <p>Hi, <%= current_user.name %></p>
-        <%= link_to 'All my Transactions', user_path(current_user) %>
-        <%= link_to 'All my External Transactions', user_path(current_user, groupless: true) %>
-        <%= link_to 'All Groups', groups_path %>
-        <%= link_to 'Log out', session_path(session[:session_id]), method: 'delete' %>
+    <div class="user-menu">
+      <div class="user-name">
+        <span><%= current_user.name %></span>
+      </div>
+      <nav>
+        <%= link_to 'MY TRACKS', user_path(current_user) %>
+        <%= link_to 'MY INDIVIDUAL TRACKS', user_path(current_user, groupless: true) %>
+        <%= link_to 'ALL GROUPS', groups_path %>
+        <%= link_to 'LOG OUT', session_path(session[:session_id]), method: 'delete' %>
       </nav>
+    </div>
     <% end %>
     <div class='wrapper'>
       <%= yield %>
