@@ -1,5 +1,8 @@
-<h1>All my Transactions </h1>
-<%= link_to 'Create new transaction', new_transaction_path %>
+<header>
+  <i class="fas fa-bars"></i>
+  <h1>MY RECORDED RUNS</h1>
+  <div class="fas fa-bars"></div>
+</header>
 <p>Total amount: <%= @transactions.sum(:amount) %></p>
 <% @transactions.each do |transaction| %>
   <p>Name: <%= transaction.name %></p>
@@ -7,3 +10,4 @@
   <p>Group icon: <%= content_tag(:i, '', class: "fas fa-#{transaction.group.icon}") unless transaction.group.nil? %></p>
   <p>Created_at: <%= transaction.created_at %></p> <br>
 <% end %>
+<%= link_to 'Create new transaction', new_transaction_path %>

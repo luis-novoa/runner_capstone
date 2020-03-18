@@ -21,6 +21,24 @@ body {
   }
 }
 
+header {
+  background: linear-gradient(to bottom, #3875c2, #2d609d);
+  display: flex !important;
+  flex-direction: row;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 0 5vw;
+  font-size: 3vh;
+  h1 {
+    margin-bottom: -0.6vh;
+  }
+  div {
+    color: transparent;
+  }
+}
+
 // Log in and sign up page
 
 .login {
@@ -67,6 +85,12 @@ body {
   background: transparent;
   border: none;
   color: #434b54;
+}
+
+// User Menu
+
+.user-menu {
+  display: none;
 }
 
 // New transaction page
