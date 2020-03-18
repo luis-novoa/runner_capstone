@@ -1,8 +1,9 @@
-<h1>Sign Up or Log In</h1>
+<div class='login w-100 h-100'>
+  <h1 class='logo'>Runner</h1>
 
-<%= form_for @user do |f| %>
-  <%= f.label :name %> <br>
-  <%= f.text_field :name %> <br>
-  <%= f.submit 'Log In', formaction: sessions_path %>
-  <%= f.submit 'Sign Up' %>
-<% end %>
+  <%= form_for @user, html: { class: 'login-form' } do |f| %>
+    <%= f.text_field :name, placeholder: 'Username' %> <br>
+    <%= f.submit 'LOG IN', formaction: sessions_path, class: 'btn-primary' %>
+    <%= f.submit 'SIGN UP', class: 'sign-up-btn' %>
+  <% end %>
+</div>

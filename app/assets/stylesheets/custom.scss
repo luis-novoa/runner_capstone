@@ -1,3 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan+2:700&display=swap');
+
+// General
+
+* {
+  box-sizing: border-box;
+  font-family: 'Chandas', sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.notification {
+  position: absolute;
+  width: 100%;
+  font-size: 2vh;
+  p {
+    margin: 1vh;
+  }
+}
+
+// Log in and sign up page
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-color: #f1f3f2;
+}
+
+.logo {
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 7vh;
+  color: #434b54;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  input[type=submit] {
+    padding: 2vh 0;
+  }
+
+  input[type=text] {
+    padding: 0 2vw;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.login-form > * {
+  font-size: 2.5vh;
+  height: 7vh;
+}
+
+.btn-primary {
+  border: none;
+  border-radius: 2px;
+}
+
+.sign-up-btn {
+  background: transparent;
+  border: none;
+  color: #434b54;
+}
+
+// New transaction page
+
 .dropdown-icon {
   font-family: FontAwesome;
   font-style: normal;
