@@ -12,6 +12,10 @@ body {
   height: 100vh;
 }
 
+a:hover {
+  text-decoration: none !important;
+}
+
 .notification {
   position: absolute;
   width: 100%;
@@ -246,7 +250,37 @@ main {
   }
 }
 
-// New transaction page
+// Forms
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 4vh 0;
+  border-top: solid #eaeaea7d;
+  border-bottom: solid #eaeaea7d;
+  background: white;
+}
+
+.form > * {
+  border: none;
+  background: white;
+  color: #767676;
+  height: 10vh;
+  border-bottom: solid #eaeaea7d;
+  font-size: 2vh;
+  margin-left: 5vw;
+  &:hover {
+    outline: none;
+  }
+}
+
+.formless-btn {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 2vh;
+  margin-bottom: -1vh;
+}
 
 .dropdown-icon {
   font-family: FontAwesome;
