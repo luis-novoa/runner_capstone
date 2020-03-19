@@ -1,10 +1,28 @@
-<h1> <%= content_tag(:i, '', class: "fas fa-#{@group.icon}") %> <%= @group.name %> Transactions </h1>
-<%= link_to 'New Transaction', new_transaction_path(group_id: @group.id) %>
-<p>Total amount: <%= @transactions.sum(:amount) %></p>
-<% @transactions.each do |transaction| %>
-  <p>Name: <%= transaction.name %></p>
-  <p>Amount: <%= transaction.amount %></p>
-  <p>Creator: <%= transaction.user.name %></p>
-  <p>Created_at: <%= transaction.created_at %></p>
+<header>
+  <div class="top-bar">
+    <%= link_to '' ,groups_path, class: "fas fa-arrow-left" %>
+    <h1> <%= content_tag(:i, '', class: "fas fa-#{@group.icon}") %> <%= @group.name %> Transactions </h1>
+    <div class="fas fa-arrow-left"></div>
+  </div>
+  <div class='sum'>
+    <span class='name'>Total distance</span>
+    <span class='amount'><%= @transactions.sum(:amount) %> KM</span>
+  </div>
+</header>
+<main>
+  <% @transactions.each do |transaction| %>
+    <div class="transaction">
+      <div class="line">
+        <span class='name'><%= transaction.name %></span>
+        <span class='date'><%= transaction.created_at.strftime("%d %b %Y") %></span>
+      </div>
+      <div class="line">
+        <span class='amount'><%= transaction.amount %> KM</span>
+        <span class='icon'><%= content_tag(:i, '', class: "fas fa-#{transaction.group.icon}") unless transaction.group.nil? %></span>
+      </div>
+    </div>
+  <% end %>
+</main>
+<%= link_to new_transaction_path(group_id: @group.id) do %>
+  <div class='outer-square'><div class='inner-square'><span>ADD NEW</span></div></div>
 <% end %>
-<%= link_to '<< Go Back', groups_path %>
