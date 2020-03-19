@@ -21,7 +21,7 @@
       </div>
     <% end %>
     <% if session[:user_id] %>
-    <div class="user-menu">
+    <div class="user-menu" id='user-menu'>
       <div class="user-name">
         <span><%= current_user.name %></span>
       </div>
@@ -33,7 +33,7 @@
       </nav>
     </div>
     <% end %>
-    <div class='wrapper'>
+    <div class='wrapper' id='wrapper'>
       <%= yield %>
     </div>
   </body>
