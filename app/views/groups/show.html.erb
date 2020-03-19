@@ -1,7 +1,7 @@
 <header>
   <div class="top-bar">
     <%= link_to '' ,groups_path, class: "fas fa-arrow-left" %>
-    <h1> <%= content_tag(:i, '', class: "fas fa-#{@group.icon}") %> <%= @group.name %> Transactions </h1>
+    <h1> <%= content_tag(:i, '', class: "fas fa-#{@group.icon}") %> <%= @group.name.upcase %> TRACKS </h1>
     <div class="fas fa-arrow-left"></div>
   </div>
   <div class='sum'>
