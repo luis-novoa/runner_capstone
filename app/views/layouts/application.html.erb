@@ -26,7 +26,7 @@
         <span><%= current_user.name %></span>
       </div>
       <nav>
-        <%= link_to 'MY TRACKS', user_path(current_user) %>
+        <%= link_to 'ALL MY TRACKS', user_path(current_user) %>
         <%= link_to 'MY INDIVIDUAL TRACKS', user_path(current_user, groupless: true) %>
         <%= link_to 'ALL GROUPS', groups_path %>
         <%= link_to 'LOG OUT', session_path(session[:session_id]), method: 'delete' %>

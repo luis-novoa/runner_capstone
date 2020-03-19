@@ -53,8 +53,16 @@ body {
   color: white;
   padding: 0 2.5vw;
   font-size: 3vh;
+  a {
+    color: white;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
   h1 {
-    margin-bottom: -0.6vh;
+    margin-bottom: -1.4vh;
+    font-size: 3vh;
   }
   div {
     color: transparent;
@@ -65,9 +73,6 @@ main {
   flex: 1;
   overflow-y: auto;
   background-color: #f1f3f2;
-}
-main > * {
-  background-color: white;
 }
 
 // Log in and sign up page
@@ -144,6 +149,10 @@ main > * {
     border-bottom: #ffffff54 solid;
     padding-bottom: 2vh;
     margin-bottom: 2vh;
+    &:hover {
+      color: #ffffffb5;
+      text-decoration: none;
+    }
   }
 }
 
@@ -198,6 +207,7 @@ main > * {
   width: 95vw;
   margin: 2vh auto;
   padding: 1.2vh 2vw;
+  background: white;
 }
 
 .line {
@@ -226,6 +236,14 @@ main > * {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.icon-focus {
+  display: flex;
+  align-items: center;
+  span {
+    font-size: 5vh;
+  }
 }
 
 // New transaction page

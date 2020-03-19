@@ -1,8 +1,23 @@
-<h1>All Groups</h1>
-<%= link_to 'Create New Group', new_group_path %>
-<% @all_groups.each do |group| %>
-  <p>Name: <%= link_to group.name, group_path(group) %></p>
-  
-  <p>Icon: <%= content_tag(:i, '', class: "fas fa-#{group.icon}") %></p>
-  <p>Created_at: <%= group.created_at %></p> <br>
+<header class="top-bar">
+  <a href='#wrapper' data-turbolinks='false' class="fas fa-bars"></a>
+  <h1>All Groups</h1>
+  <div class="fas fa-bars"></div>
+</header>
+<main>
+  <% @all_groups.each do |group| %>
+    <%= link_to group_path(group) do %>
+      <div class="transaction">
+        <div class="line">
+          <span class='name'><%= group.name %></span>
+          <span class='date'><%= group.created_at.strftime("%d %b %Y") %></span>
+        </div>
+        <div class='icon-focus'>
+          <span class="icon"><%= content_tag(:i, '', class: "fas fa-#{group.icon}") %></span>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</main>
+<%= link_to new_group_path do %>
+  <div class='outer-square'><div class='inner-square'><span>CREATE NEW GROUP</span></div></div>
 <% end %>
