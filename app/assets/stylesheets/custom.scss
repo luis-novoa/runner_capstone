@@ -7,9 +7,11 @@
   font-family: 'Chandas', sans-serif;
 }
 
-body {
+.full-page {
   width: 100vw;
   height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 a:hover {
@@ -34,17 +36,17 @@ a:hover {
   position: relative;
 }
 
-#wrapper:target {
-  animation-name: shrink;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+#wrapper-miniature {
+  transform: scale(0.9);
+  bottom: 99vh;
+  left: 75vw;
 }
 
-@keyframes shrink {
-  100% {
-    // transform: scale(0.9);
-    left: 75vw;
-  }
+.miniature-anchor {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .top-bar {
@@ -130,7 +132,7 @@ main {
 // User Menu
 
 .user-menu {
-  position: absolute;
+  position: relative;
   z-index: 0;
   background: linear-gradient(to bottom left, #1e3763, #2a6fa4);
   width: 100vw;

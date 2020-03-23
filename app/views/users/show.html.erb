@@ -1,6 +1,6 @@
 <header>
   <div class="top-bar">
-    <a href='#wrapper' data-turbolinks='false' class="fas fa-bars"></a>
+    <%= link_to '', user_path(current_user, show_menu: true), class: "fas fa-bars" %>
     <%= title %>
     <div class="fas fa-bars"></div>
   </div>
