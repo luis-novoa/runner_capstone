@@ -16,6 +16,11 @@ class TransactionsController < ApplicationController
     else
       flash.now[:alert] = @new_transaction.errors.full_messages
       @transaction = @new_transaction
+      @group_select = [['No Group','']]
+      @groups = Group.all
+      @groups.each do |group|
+        @group_select.push([group.name, group.id])
+      end
       render 'new'
     end
   end

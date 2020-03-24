@@ -11,4 +11,7 @@
     <%= f.number_field :amount, placeholder: 'Distance in Kilometers (number)' %>
     <%= f.select :group_id, options_for_select(@group_select, params[:group_id]) %>
   <% end %>
+  <div>
+    <%= error_messages %>
+  </div>
 </main>
