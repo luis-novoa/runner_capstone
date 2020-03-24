@@ -1,0 +1,15 @@
+<header class="top-bar">
+  <%= link_to '', url_for(show_menu: true), class: "fas fa-bars" %>
+  <h1>OTHER USERS</h1>
+  <div class="fas fa-bars"></div>
+</header>
+<main>
+  <% @other_users.each do |user| %>
+    <%= link_to user_path(user) do %>
+      <div class="transaction user-index">
+        <span class='name'><%= user.name %></span>
+        <span class='date'>Joined in <%= user.created_at.strftime("%d %b %Y") %></span>
+      </div>
+    <% end %>
+  <% end %>
+</main>

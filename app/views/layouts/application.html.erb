@@ -21,6 +21,7 @@
             <%= link_to 'ALL MY TRACKS', user_path(@user) %>
             <%= link_to 'MY INDIVIDUAL TRACKS', user_path(@user, groupless: true) %>
             <%= link_to 'ALL GROUPS', groups_path %>
+            <%= link_to 'OTHER USERS', users_path %>
             <%= link_to 'LOG OUT', session_path(session[:session_id]), method: 'delete' %>
           </nav>
         </div>

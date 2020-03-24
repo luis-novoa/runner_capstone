@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     unless session[:user_id]
       redirect_to root_path
     else
-      @all_users = User.all
+      @other_users = User.all.where.not(id: session[:user_id])
     end
   end
 
