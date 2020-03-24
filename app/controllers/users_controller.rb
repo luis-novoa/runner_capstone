@@ -30,6 +30,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    unless session[:user_id]
+      redirect_to root_path
+    else
+      @all_users = User.all
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:name)
