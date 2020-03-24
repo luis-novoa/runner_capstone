@@ -25,7 +25,7 @@
           </nav>
         </div>
         <div class='wrapper' id='wrapper-miniature'>
-          <%= link_to '', url_for(show_menu: nil) , class: 'miniature-anchor' %>
+          <%= link_to '', url_for(show_menu: nil, groupless: params[:groupless]) , class: 'miniature-anchor' %>
           <%= yield %>
         </div>
       <% else %>
