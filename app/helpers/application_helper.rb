@@ -3,7 +3,8 @@ module ApplicationHelper
     unless session[:user_id]
       redirect_to root_path
     else
-      User.find(session[:user_id])
+      @user = User.find(session[:user_id])
+      @user
     end
   end
 
