@@ -6,7 +6,7 @@
   </div>
 </header>
 <main>
-  <%= form_for @group, html: { class: 'form', id: 'new-group-form' } do |f| %>
+  <%= form_for @group, url: create_group_path , html: { class: 'form', id: 'new-group-form' } do |f| %>
     <%= f.text_field :name, placeholder: 'Group Name' %>
     <%= f.select :icon, options_for_select([["&#xf554;".html_safe, 'walking'],["&#xf84a;".html_safe, 'biking'],["&#xf6f0;".html_safe, 'horse'],["&#xf21c;".html_safe,'motorcycle'],["&#xf5e4;".html_safe,'car-side'],["&#xf239;".html_safe, 'subway'],["&#xf21a;".html_safe, 'ship'],["&#xf072;".html_safe,'plane'],["&#xf197;".html_safe,'space-shuttle']]), {}, { class: 'dropdown-icon' } %>
   <% end %>
