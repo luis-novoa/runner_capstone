@@ -1,9 +1,13 @@
 module UsersHelper
   def title
-    if params[:groupless]
-      content_tag(:h1, 'MY INDIVIDUAL TRACKS')
+    unless params[:id].to_i == session[:user_id]
+      content_tag(:h1, "#{@user.name.upcase} TRACKS")
     else
-      content_tag(:h1, 'ALL MY TRACKS')
+      if params[:groupless]
+        content_tag(:h1, 'MY INDIVIDUAL TRACKS')
+      else
+        content_tag(:h1, 'ALL MY TRACKS')
+      end
     end
   end
 end

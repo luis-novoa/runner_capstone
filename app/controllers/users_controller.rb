@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    current_user
+    @user = User.find(params[:id])
     if @user.respond_to?(:transactions)
       if params[:groupless]
         @transactions = @user.transactions.where(group_id: nil).order(:created_at).reverse_order
