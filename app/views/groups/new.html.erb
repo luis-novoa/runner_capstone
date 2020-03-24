@@ -1,11 +1,16 @@
-<h1>Create a Group</h1>
-
-<%= form_for @group do |f| %>
-  <%= f.label :name %> <br>
-  <%= f.text_field :name %> <br>
-  <%= f.label :icon %>
-  <%= f.select :icon, options_for_select([["", 'walking'],["", 'biking'],["", 'horse'],["",'motorcycle'],["",'car-side'],["", 'subway'],["", 'ship'],["",'plane'],["",'space-shuttle']]), {}, { class: 'dropdown-icon' } %> <br>
-  <%= f.submit 'Create' %>
-<% end %>
-
-<%= link_to '<< Go Back', groups_path %>
+<header>
+  <div class="top-bar">
+    <%= link_to '' , groups_path , class: "fas fa-arrow-left" %>
+    <h1 class='ml-4'> CREATE A GROUP </h1>
+    <button class='formless-btn' type='submit' form='new-group-form'>Create</button>
+  </div>
+</header>
+<main>
+  <%= form_for @group, html: { class: 'form', id: 'new-group-form' } do |f| %>
+    <%= f.text_field :name, placeholder: 'Group Name' %>
+    <%= f.select :icon, options_for_select([["&#xf554;".html_safe, 'walking'],["&#xf84a;".html_safe, 'biking'],["&#xf6f0;".html_safe, 'horse'],["&#xf21c;".html_safe,'motorcycle'],["&#xf5e4;".html_safe,'car-side'],["&#xf239;".html_safe, 'subway'],["&#xf21a;".html_safe, 'ship'],["&#xf072;".html_safe,'plane'],["&#xf197;".html_safe,'space-shuttle']]), {}, { class: 'dropdown-icon' } %>
+  <% end %>
+  <div>
+    <%= error_messages %>
+  </div>
+</main>
