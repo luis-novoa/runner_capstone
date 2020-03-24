@@ -4,7 +4,6 @@ module ApplicationHelper
       redirect_to root_path
     else
       @user = User.find(session[:user_id])
-      @user
     end
   end
 
@@ -16,13 +15,6 @@ module ApplicationHelper
         end
       end
       content_tag(:div, errors , class: ['notification', 'alert-danger'])
-      # <div class="notification alert-danger">
-      #   <ul>
-      #     flash[:alert].collect do |alert|
-      #       <li> alert </li>
-      #     end
-      #   </ul>
-      # </div>
     end
   end
 end

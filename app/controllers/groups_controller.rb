@@ -4,7 +4,8 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @new_group = current_user.groups.build(group_params)
+    current_user
+    @new_group = @user.groups.build(group_params)
     if @new_group.save
       redirect_to groups_path
     else

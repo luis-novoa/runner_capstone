@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def new
     if session[:user_id]
-      @user = current_user
+      current_user
       redirect_to @user
     else
       @user = User.new
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    current_user
     if @user.respond_to?(:transactions)
       if params[:groupless]
         @transactions = @user.transactions.where(group_id: nil).order(:created_at).reverse_order

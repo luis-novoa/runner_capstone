@@ -10,9 +10,10 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    @new_transaction = current_user.transactions.build(transaction_params)
+    current_user
+    @new_transaction = @user.transactions.build(transaction_params)
     if @new_transaction.save
-      redirect_to current_user
+      redirect_to @user
     else
       flash.now[:alert] = @new_transaction.errors.full_messages
       @transaction = @new_transaction
