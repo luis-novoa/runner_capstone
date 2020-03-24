@@ -20,7 +20,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @transactions = @group.transactions.order(:created_at).reverse_order
+    @transactions = @group.transactions.includes(:user).order(:created_at).reverse_order
   end
 
   private

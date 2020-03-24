@@ -18,7 +18,7 @@
       </div>
       <div class="line">
         <span class='amount'><%= transaction.amount %> KM</span>
-        <span class='icon'><%= content_tag(:i, '', class: "fas fa-#{transaction.group.icon}") unless transaction.group.nil? %></span>
+        <span class='date'><%= transaction.user.name %></span>
       </div>
     </div>
   <% end %>
