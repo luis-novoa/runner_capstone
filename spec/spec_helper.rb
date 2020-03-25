@@ -18,6 +18,8 @@ RSpec.shared_context 'Global variables' do
   let(:test_transaction4) { Transaction.new(name: 'user2 transaction', amount: 4, user_id: test_user2.id) }
   let(:test_transaction5) { Transaction.new(name: 'user2 transaction2', amount: 5, user_id: test_user2.id, group_id: test_group.id) }
   let(:test_transaction6) { Transaction.new(name: 'user2 transaction3', amount: 6, user_id: test_user2.id, group_id: test_group2.id) }
+  let(:test_transaction7) { Transaction.new(name: 'user transaction4', amount: 7, user_id: test_user.id) }
+
 end
 
 RSpec.configure do |config|
