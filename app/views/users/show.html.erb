@@ -23,6 +23,8 @@
     </div>
   <% end %>
 </main>
-<%= link_to new_transaction_path do %>
-  <div class='outer-square'><div class='inner-square'><span>ADD NEW TRACK</span></div></div>
+<% if params[:id].to_i == session[:user_id] %>
+  <%= link_to new_transaction_path do %>
+    <div class='outer-square'><div class='inner-square'><span>ADD NEW TRACK</span></div></div>
+  <% end %>
 <% end %>

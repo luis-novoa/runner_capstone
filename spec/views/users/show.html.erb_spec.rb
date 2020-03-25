@@ -121,5 +121,66 @@ RSpec.describe "users/show.html.erb", type: :feature do
         expect(page).to have_selector 'span.amount', text: '8 KM'
       end
     end
+
+    context 'other user page' do
+      scenario 'right title' do
+        login
+        test_user2.save
+        visit user_path(test_user2)
+        expect(page).to have_selector 'h1', text: "USER2 TRACKS"
+      end
+
+      scenario 'link to menu' do
+        login
+        test_user2.save
+        visit user_path(test_user2)
+        expect(page).to have_link href: user_path(test_user2, show_menu: true)
+      end
+
+      scenario 'no link to new track' do
+        login
+        test_user2.save
+        visit user_path(test_user2)
+        expect(page).to have_no_link href: new_transaction_path
+      end
+
+      scenario "show target user's tracks" do
+        login
+        test_user2.save
+        test_transaction4.save
+        visit user_path(test_user2)
+        expect(page).to have_selector 'span', text: 'user2 transaction'
+      end
+
+      scenario "don't show other user's tracks" do
+        login
+        test_transaction.save
+        test_user2.save
+        test_transaction4.save
+        visit user_path(test_user2)
+        expect(page).to have_no_selector 'span', text: 'user transaction'
+      end
+
+      scenario "show group tracks" do
+        login
+        test_group.save
+        test_user2.save
+        test_transaction5.save
+        visit user_path(test_user2)
+        expect(page).to have_selector 'i.fas.fa-walking'
+      end
+
+      scenario "show sum of tracks" do
+        login
+        test_user2.save
+        test_group.save
+        test_group2.save
+        test_transaction4.save
+        test_transaction5.save
+        test_transaction6.save
+        visit user_path(test_user2)
+        expect(page).to have_selector 'span.amount', text: '15 KM'
+      end
+    end
   end
 end
