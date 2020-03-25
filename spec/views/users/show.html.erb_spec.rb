@@ -134,7 +134,7 @@ RSpec.describe "users/show.html.erb", type: :feature do
         login
         test_user2.save
         visit user_path(test_user2)
-        expect(page).to have_link href: user_path(test_user2, show_menu: true)
+        expect(page).to have_link href: users_path
       end
 
       scenario 'no link to new track' do
