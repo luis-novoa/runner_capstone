@@ -1,6 +1,10 @@
 <header>
   <div class="top-bar">
-    <%= link_to '', url_for(show_menu: true, groupless: params[:groupless]), class: "fas fa-bars" %>
+    <% if params[:id].to_i == session[:user_id] %>
+      <%= link_to '', url_for(show_menu: true, groupless: params[:groupless]), class: "fas fa-bars" %>
+    <% else %>
+      <%= link_to '', users_path, class: 'fas fa-arrow-left' %>
+    <% end %>
     <%= title %>
     <div class="fas fa-bars"></div>
   </div>
