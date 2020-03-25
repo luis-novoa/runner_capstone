@@ -20,6 +20,10 @@ class UsersController < ApplicationController
   end
 
   def show
+    unless session[:user_id]
+      redirect_to root_path
+      return
+    end 
     @user = User.find(params[:id])
     if @user.respond_to?(:transactions)
       if params[:groupless]

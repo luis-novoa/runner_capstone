@@ -1,3 +1,17 @@
+module Helpers
+  def login
+    test_user.save
+    visit root_path
+    fill_in 'user_name', with: 'test'
+    click_button 'LOG IN'
+  end
+end
+
+RSpec.shared_context 'Global variables' do
+  let(:test_user) { User.new(name: 'test') }
+  let(:test_transaction) { Transaction.new(name: 'transaction', amount: 1, user_id: test_user.id) }
+end
+
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
@@ -8,6 +22,7 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
+  config.include_context 'Global variables'
   config.filter_run_when_matching :focus
   config.example_status_persistence_file_path = "spec/examples.txt"
   config.disable_monkey_patching!
@@ -15,4 +30,6 @@ RSpec.configure do |config|
   config.order = :random
   Kernel.srand config.seed
   # config.profile_examples = 10
+  config.include Helpers
 end
+
