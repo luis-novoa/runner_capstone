@@ -2,13 +2,13 @@ module Helpers
   def login
     test_user.save
     visit root_path
-    fill_in 'user_name', with: 'test'
+    fill_in 'user_name', with: 'user'
     click_button 'LOG IN'
   end
 end
 
 RSpec.shared_context 'Global variables' do
-  let(:test_user) { User.new(name: 'test') }
+  let(:test_user) { User.new(name: 'user') }
   let(:test_transaction) { Transaction.new(name: 'transaction', amount: 1, user_id: test_user.id) }
 end
 
