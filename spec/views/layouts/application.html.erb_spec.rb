@@ -4,6 +4,12 @@ require 'spec_helper'
 RSpec.describe "layouts/application.html.erb", type: :feature do
 
   context 'links' do
+    scenario 'user name' do
+      login
+      click_link class: 'fa-bars'
+      expect(page).to have_selector 'span', text: test_user.name
+    end
+
     scenario "all my tracks" do
       login
       click_link class: 'fa-bars'
