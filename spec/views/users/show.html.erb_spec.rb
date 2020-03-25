@@ -3,16 +3,22 @@ require 'spec_helper'
 
 RSpec.describe "users/show.html.erb", type: :feature do
 
-  scenario 'access the page while not logged in redirects you to home page' do
-    test_user.save
-    visit user_path(test_user)
-    expect(current_path).to eq(root_path)
+  context 'not logged in' do
+    scenario 'visit user main page' do
+      test_user.save
+      visit user_path(test_user)
+      expect(current_path).to eq(root_path)
+    end
   end
 
-  scenario "user's transactions appear on the user page" do
-    login
-    test_transaction.save
-    refresh
-    expect(page).to have_selector 'span', text: 'transaction'
+  context 'logged in' do
+
+    scenario "show user's transactions" do
+      login
+      test_transaction.save
+      refresh
+      expect(page).to have_selector 'span', text: 'user transaction'
+    end
   end
+
 end
