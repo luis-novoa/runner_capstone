@@ -2,11 +2,10 @@ require 'rails_helper'
 require 'spec_helper'
 
 RSpec.describe "users/index.html.erb", type: :feature do
-  context 'not logged in' do
-    scenario 'visit users index' do
-      visit users_path
-      expect(current_path).to eq(root_path)
-    end
+
+  scenario 'not logged in' do
+    visit users_path
+    expect(current_path).to eq(root_path)
   end
 
   context 'logged in' do

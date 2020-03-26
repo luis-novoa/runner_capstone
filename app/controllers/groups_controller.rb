@@ -16,12 +16,20 @@ class GroupsController < ApplicationController
   end
 
   def index
-    @all_groups = Group.all.order(:name)
+    if session[:user_id]
+      @all_groups = Group.all.order(:name)
+    else
+      redirect_to root_path
+    end
   end
 
   def show
-    @group = Group.find(params[:id])
-    @transactions = @group.transactions.includes(:user).order(:created_at).reverse_order
+    if session[:user_id]
+      @group = Group.find(params[:id])
+      @transactions = @group.transactions.includes(:user).order(:created_at).reverse_order
+    else
+      redirect_to root_path
+    end
   end
 
   private
