@@ -130,7 +130,7 @@ RSpec.describe "users/show.html.erb", type: :feature do
         expect(page).to have_selector 'h1', text: "USER2 TRACKS"
       end
 
-      scenario 'link to menu' do
+      scenario 'link to users index' do
         login
         test_user2.save
         visit user_path(test_user2)
