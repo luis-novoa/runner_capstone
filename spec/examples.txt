@@ -32,6 +32,14 @@ example_id                                               | status  | run_time   
 ./spec/views/groups/index.html.erb_spec.rb[1:2:1]        | passed  | 0.08424 seconds |
 ./spec/views/groups/index.html.erb_spec.rb[1:2:2]        | passed  | 0.0739 seconds  |
 ./spec/views/groups/index.html.erb_spec.rb[1:2:3]        | passed  | 0.07262 seconds |
+./spec/views/groups/show.html.erb_spec.rb[1:1]           | passed  | 2.5 seconds     |
+./spec/views/groups/show.html.erb_spec.rb[1:2:1]         | passed  | 0.06312 seconds |
+./spec/views/groups/show.html.erb_spec.rb[1:2:2]         | passed  | 0.10351 seconds |
+./spec/views/groups/show.html.erb_spec.rb[1:2:3]         | passed  | 0.08208 seconds |
+./spec/views/groups/show.html.erb_spec.rb[1:2:4]         | passed  | 0.05529 seconds |
+./spec/views/groups/show.html.erb_spec.rb[1:2:5]         | passed  | 0.0701 seconds  |
+./spec/views/groups/show.html.erb_spec.rb[1:2:6]         | passed  | 0.06699 seconds |
+./spec/views/groups/show.html.erb_spec.rb[1:2:7]         | passed  | 0.05848 seconds |
 ./spec/views/layouts/application.html.erb_spec.rb[1:1:1] | passed  | 0.04569 seconds |
 ./spec/views/layouts/application.html.erb_spec.rb[1:1:2] | passed  | 0.06041 seconds |
 ./spec/views/layouts/application.html.erb_spec.rb[1:1:3] | passed  | 0.05968 seconds |
