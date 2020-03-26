@@ -1,6 +1,10 @@
 class GroupsController < ApplicationController
   def new
-    @group = Group.new
+    if session[:user_id]
+      @group = Group.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create

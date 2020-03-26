@@ -3,11 +3,9 @@ require 'spec_helper'
 
 RSpec.describe "transactions/new.html.erb", type: :feature do
 
-  context 'not logged in' do
-    scenario "page is unreachable" do
-      visit new_transaction_path
-      expect(current_path).to eq(root_path)
-    end
+  scenario "not logged in" do
+    visit new_transaction_path
+    expect(current_path).to eq(root_path)
   end
 
   context 'logged in' do
