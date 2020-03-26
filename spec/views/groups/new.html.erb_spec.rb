@@ -15,5 +15,29 @@ RSpec.describe "groups/new.html.erb", type: :feature do
       click_link class: "fa-arrow-left"
       expect(current_path).to eq(groups_path)
     end
+
+    scenario 'create group' do
+      login
+      visit create_group_path
+      fill_in 'group_name', with: 'test'
+      click_button 'Create'
+      expect(page).to have_selector 'span', text: 'test'
+    end
+
+    scenario 'nameless group' do
+      login
+      visit create_group_path
+      fill_in 'group_name', with: ''
+      click_button 'Create'
+      expect(page).to have_selector '.notification', text: "Name can't be blank"
+    end
+
+    scenario 'short name group' do
+      login
+      visit create_group_path
+      fill_in 'group_name', with: 't'
+      click_button 'Create'
+      expect(page).to have_selector '.notification', text: 'Name is too short (minimum is 2 characters)'
+    end
   end
 end

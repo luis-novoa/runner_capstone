@@ -32,8 +32,11 @@ example_id                                               | status  | run_time   
 ./spec/views/groups/index.html.erb_spec.rb[1:2:1]        | passed  | 0.08424 seconds |
 ./spec/views/groups/index.html.erb_spec.rb[1:2:2]        | passed  | 0.0739 seconds  |
 ./spec/views/groups/index.html.erb_spec.rb[1:2:3]        | passed  | 0.07262 seconds |
-./spec/views/groups/new.html.erb_spec.rb[1:1]            | passed  | 2.52 seconds    |
-./spec/views/groups/new.html.erb_spec.rb[1:2:1]          | passed  | 0.08122 seconds |
+./spec/views/groups/new.html.erb_spec.rb[1:1]            | passed  | 2.49 seconds    |
+./spec/views/groups/new.html.erb_spec.rb[1:2:1]          | passed  | 0.05658 seconds |
+./spec/views/groups/new.html.erb_spec.rb[1:2:2]          | passed  | 0.06685 seconds |
+./spec/views/groups/new.html.erb_spec.rb[1:2:3]          | passed  | 0.0797 seconds  |
+./spec/views/groups/new.html.erb_spec.rb[1:2:4]          | passed  | 0.08849 seconds |
 ./spec/views/groups/show.html.erb_spec.rb[1:1]           | passed  | 2.5 seconds     |
 ./spec/views/groups/show.html.erb_spec.rb[1:2:1]         | passed  | 0.06312 seconds |
 ./spec/views/groups/show.html.erb_spec.rb[1:2:2]         | passed  | 0.10351 seconds |
