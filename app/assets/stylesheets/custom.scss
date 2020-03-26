@@ -278,6 +278,9 @@ main {
   &:hover {
     outline: none;
   }
+  &:focus {
+    outline: none;
+  }
 }
 
 .formless-btn {
@@ -286,6 +289,9 @@ main {
   color: white;
   font-size: 2vh;
   margin-bottom: -1vh;
+  &:focus {
+    outline: none;
+  }
 }
 
 .dropdown-icon {
