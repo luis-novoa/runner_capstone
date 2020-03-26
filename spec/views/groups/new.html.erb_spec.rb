@@ -24,6 +24,14 @@ RSpec.describe "groups/new.html.erb", type: :feature do
       expect(page).to have_selector 'span', text: 'test'
     end
 
+    scenario 'failed attempt and refresh' do
+      login
+      visit create_group_path
+      click_button 'Create'
+      visit current_path
+      expect(current_path).to eq(create_group_path)
+    end
+
     scenario 'nameless group' do
       login
       visit create_group_path

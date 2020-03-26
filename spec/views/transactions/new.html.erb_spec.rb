@@ -9,6 +9,14 @@ RSpec.describe "transactions/new.html.erb", type: :feature do
   end
 
   context 'logged in' do
+    scenario 'failed attempt and refresh' do
+      login
+      visit new_transaction_path
+      click_button 'Create'
+      visit current_path
+      expect(current_path).to eq(new_transaction_path)
+    end
+
     context 'access from user page' do
       scenario "previous page link" do
         login
