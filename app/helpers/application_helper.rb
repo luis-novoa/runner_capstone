@@ -1,20 +1,20 @@
 module ApplicationHelper
   def current_user
-    unless session[:user_id]
-      redirect_to root_path
-    else
+    if session[:user_id]
       @user = User.find(session[:user_id])
+    else
+      redirect_to root_path
     end
   end
 
   def error_messages
-    if flash.present?
-      errors = content_tag(:ul) do
-        flash[:alert].each do |alert|
-          concat(content_tag(:li, alert))
-        end
+    return unless flash.present?
+
+    errors = content_tag(:ul) do
+      flash[:alert].each do |alert|
+        concat(content_tag(:li, alert))
       end
-      content_tag(:div, errors , class: ['notification', 'alert-danger'])
     end
+    content_tag(:div, errors, class: %w[notification alert-danger])
   end
 end

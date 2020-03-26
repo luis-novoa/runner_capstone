@@ -1,8 +1,8 @@
 require 'rails_helper'
 require 'spec_helper'
 
-RSpec.describe "users/new.html.erb", type: :feature do
-
+# rubocop:disable Metrics/BlockLength
+RSpec.describe 'users/new.html.erb', type: :feature do
   context 'login' do
     scenario 'existent username' do
       test_user.save
@@ -16,14 +16,14 @@ RSpec.describe "users/new.html.erb", type: :feature do
       visit root_path
       fill_in 'user_name', with: 'user'
       click_button 'LOG IN'
-      expect(page).to have_selector '.notification', text: "User not found. Click on sign up to create a new user."
+      expect(page).to have_selector '.notification', text: 'User not found. Click on sign up to create a new user.'
     end
 
     scenario 'blank username' do
       visit root_path
       fill_in 'user_name', with: ''
       click_button 'LOG IN'
-      expect(page).to have_selector '.notification', text: "User not found. Click on sign up to create a new user."
+      expect(page).to have_selector '.notification', text: 'User not found. Click on sign up to create a new user.'
     end
 
     scenario 'short username' do
@@ -31,7 +31,7 @@ RSpec.describe "users/new.html.erb", type: :feature do
       visit root_path
       fill_in 'user_name', with: 'te'
       click_button 'LOG IN'
-      expect(page).to have_selector '.notification', text: "User not found. Click on sign up to create a new user."
+      expect(page).to have_selector '.notification', text: 'User not found. Click on sign up to create a new user.'
     end
 
     scenario 'failed attempt and refresh' do
@@ -50,15 +50,14 @@ RSpec.describe "users/new.html.erb", type: :feature do
       click_button 'SIGN UP'
       expect(page).to have_selector '.notification', text: 'Name has already been taken'
     end
-  
-  
+
     scenario 'new username' do
       visit root_path
       fill_in 'user_name', with: 'user'
       click_button 'SIGN UP'
       expect(page).to have_selector 'h1', text: 'ALL MY TRACKS'
     end
-    
+
     scenario 'blank username' do
       test_user.save
       visit root_path
@@ -72,7 +71,7 @@ RSpec.describe "users/new.html.erb", type: :feature do
       visit root_path
       fill_in 'user_name', with: 'te'
       click_button 'SIGN UP'
-      expect(page).to have_selector '.notification', text: "Name is too short (minimum is 3 characters)"
+      expect(page).to have_selector '.notification', text: 'Name is too short (minimum is 3 characters)'
     end
 
     scenario 'failed attempt and refresh' do
@@ -91,3 +90,4 @@ RSpec.describe "users/new.html.erb", type: :feature do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

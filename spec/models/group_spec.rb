@@ -18,7 +18,7 @@ RSpec.describe Group, type: :model do
     end
 
     it "check for name's maximum characters" do
-      test_group.name = 'a'*51
+      test_group.name = 'a' * 51
       expect(test_group.save).to eq(false)
     end
 

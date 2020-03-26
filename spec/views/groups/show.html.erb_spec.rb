@@ -1,8 +1,8 @@
 require 'rails_helper'
 require 'spec_helper'
 
-RSpec.describe "groups/show.html.erb", type: :feature do
-
+# rubocop:disable Metrics/BlockLength
+RSpec.describe 'groups/show.html.erb', type: :feature do
   scenario 'not logged in' do
     visit groups_path
     expect(current_path).to eq(root_path)
@@ -13,7 +13,7 @@ RSpec.describe "groups/show.html.erb", type: :feature do
       login
       test_group2.save
       visit group_path(test_group2)
-      expect(page).to have_selector 'h1', text: "GROUP2 TRACKS"
+      expect(page).to have_selector 'h1', text: 'GROUP2 TRACKS'
     end
 
     scenario 'link to previous page' do
@@ -48,7 +48,7 @@ RSpec.describe "groups/show.html.erb", type: :feature do
       expect(page).to have_no_selector 'span', text: 'user transaction2'
     end
 
-    scenario "show track authors" do
+    scenario 'show track authors' do
       login
       test_group2.save
       test_transaction3.save
@@ -56,7 +56,7 @@ RSpec.describe "groups/show.html.erb", type: :feature do
       expect(page).to have_selector 'span', text: test_user.name
     end
 
-    scenario "show sum of tracks" do
+    scenario 'show sum of tracks' do
       login
       test_user2.save
       test_group2.save
@@ -67,3 +67,4 @@ RSpec.describe "groups/show.html.erb", type: :feature do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

@@ -1,8 +1,8 @@
 require 'rails_helper'
 require 'spec_helper'
 
-RSpec.describe "layouts/application.html.erb", type: :feature do
-
+# rubocop:disable Metrics/BlockLength
+RSpec.describe 'layouts/application.html.erb', type: :feature do
   context 'links' do
     scenario 'user name' do
       login
@@ -10,7 +10,7 @@ RSpec.describe "layouts/application.html.erb", type: :feature do
       expect(page).to have_selector 'span', text: test_user.name
     end
 
-    scenario "all my tracks" do
+    scenario 'all my tracks' do
       login
       click_link class: 'fa-bars'
       click_link 'ALL MY TRACKS'
@@ -37,7 +37,7 @@ RSpec.describe "layouts/application.html.erb", type: :feature do
       click_link 'OTHER USERS'
       expect(current_path).to eq(users_path)
     end
-  
+
     scenario 'logout' do
       login
       click_link class: 'fa-bars'
@@ -46,7 +46,7 @@ RSpec.describe "layouts/application.html.erb", type: :feature do
       expect(current_path).to eq(root_path)
     end
   end
-  
+
   context 'previous screen' do
     scenario 'main page' do
       login
@@ -80,3 +80,4 @@ RSpec.describe "layouts/application.html.erb", type: :feature do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

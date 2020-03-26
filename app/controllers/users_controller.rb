@@ -23,26 +23,27 @@ class UsersController < ApplicationController
     unless session[:user_id]
       redirect_to root_path
       return
-    end 
-    @user = User.find(params[:id])
-    if @user.respond_to?(:transactions)
-      if params[:groupless]
-        @transactions = @user.transactions.where(group_id: nil).order(:created_at).reverse_order
-      else
-        @transactions = @user.transactions.includes(:group).order(:created_at).reverse_order
-      end
     end
+    @user = User.find(params[:id])
+    return if @user.respond_to?(:transactions)
+
+    @transactions = if params[:groupless]
+                      @user.transactions.where(group_id: nil).order(:created_at).reverse_order
+                    else
+                      @user.transactions.includes(:group).order(:created_at).reverse_order
+                    end
   end
 
   def index
-    unless session[:user_id]
-      redirect_to root_path
-    else
+    if session[:user_id]
       @other_users = User.all.where.not(id: session[:user_id])
+    else
+      redirect_to root_path
     end
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name)
   end

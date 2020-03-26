@@ -18,7 +18,7 @@ RSpec.describe Transaction, type: :model do
     end
 
     it "check for name's maximum characters" do
-      test_transaction.name = 'a'*51
+      test_transaction.name = 'a' * 51
       expect(test_transaction.save).to eq(false)
     end
 

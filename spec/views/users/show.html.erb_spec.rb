@@ -1,8 +1,8 @@
 require 'rails_helper'
 require 'spec_helper'
 
-RSpec.describe "users/show.html.erb", type: :feature do
-
+# rubocop:disable Metrics/BlockLength
+RSpec.describe 'users/show.html.erb', type: :feature do
   context 'not logged in' do
     scenario 'visit any user page' do
       test_user.save
@@ -50,7 +50,7 @@ RSpec.describe "users/show.html.erb", type: :feature do
         expect(page).to have_no_selector 'span', text: 'user2 transaction'
       end
 
-      scenario "show group tracks" do
+      scenario 'show group tracks' do
         login
         test_group.save
         test_transaction2.save
@@ -58,7 +58,7 @@ RSpec.describe "users/show.html.erb", type: :feature do
         expect(page).to have_selector 'i.fas.fa-walking'
       end
 
-      scenario "show sum of tracks" do
+      scenario 'show sum of tracks' do
         login
         test_group.save
         test_group2.save
@@ -113,7 +113,7 @@ RSpec.describe "users/show.html.erb", type: :feature do
         expect(page).to have_no_selector 'i.fas.fa-walking'
       end
 
-      scenario "show sum of tracks" do
+      scenario 'show sum of tracks' do
         login
         test_transaction.save
         test_transaction7.save
@@ -127,7 +127,7 @@ RSpec.describe "users/show.html.erb", type: :feature do
         login
         test_user2.save
         visit user_path(test_user2)
-        expect(page).to have_selector 'h1', text: "USER2 TRACKS"
+        expect(page).to have_selector 'h1', text: 'USER2 TRACKS'
       end
 
       scenario 'link to users index' do
@@ -161,7 +161,7 @@ RSpec.describe "users/show.html.erb", type: :feature do
         expect(page).to have_no_selector 'span', text: 'user transaction'
       end
 
-      scenario "show group tracks" do
+      scenario 'show group tracks' do
         login
         test_group.save
         test_user2.save
@@ -170,7 +170,7 @@ RSpec.describe "users/show.html.erb", type: :feature do
         expect(page).to have_selector 'i.fas.fa-walking'
       end
 
-      scenario "show sum of tracks" do
+      scenario 'show sum of tracks' do
         login
         test_user2.save
         test_group.save
@@ -184,3 +184,4 @@ RSpec.describe "users/show.html.erb", type: :feature do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

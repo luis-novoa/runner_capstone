@@ -16,7 +16,7 @@ RSpec.describe User, type: :model do
     end
 
     it "check for name's maximum characters" do
-      test_user.name = 'a'*21
+      test_user.name = 'a' * 21
       expect(test_user.save).to eq(false)
     end
 
