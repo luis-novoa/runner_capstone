@@ -6,21 +6,27 @@
   </div>
   <div class='sum'>
     <span class='name'>Total distance</span>
-    <span class='amount'><%= @transactions.sum(:amount) %> KM</span>
+    <% if @transactions %>
+      <span class='amount'><%= @transactions.sum(:amount) %> KM</span>
+    <% else %>
+      <span class='amount'>0 KM</span>
+    <% end %>
   </div>
 </header>
 <main>
-  <% @transactions.each do |transaction| %>
-    <div class="transaction">
-      <div class="line">
-        <span class='name'><%= transaction.name %></span>
-        <span class='date'><%= transaction.created_at.strftime("%d %b %Y") %></span>
+  <% if @transactions %>
+    <% @transactions.each do |transaction| %>
+      <div class="transaction">
+        <div class="line">
+          <span class='name'><%= transaction.name %></span>
+          <span class='date'><%= transaction.created_at.strftime("%d %b %Y") %></span>
+        </div>
+        <div class="line">
+          <span class='amount'><%= transaction.amount %> KM</span>
+          <span class='date'><%= transaction.user.name %></span>
+        </div>
       </div>
-      <div class="line">
-        <span class='amount'><%= transaction.amount %> KM</span>
-        <span class='date'><%= transaction.user.name %></span>
-      </div>
-    </div>
+    <% end %>
   <% end %>
 </main>
 <%= link_to new_transaction_path(group_id: @group.id) do %>
