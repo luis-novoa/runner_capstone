@@ -1,17 +1,98 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require baloo_chettan_2
+*= require_tree .
+*= require_self
+*/
+
 @import 'font-awesome';
 @import 'bootstrap';
+
+* {
+  box-sizing: border-box;
+  font-family: 'Chandas', sans-serif;
+}
+
+.full-page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+.notification {
+  position: absolute;
+  width: 100%;
+  font-size: 2vh;
+  ul {
+    margin: 1vh;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+}
+
+#wrapper-miniature {
+  transform: scale(0.9);
+  bottom: 99vh;
+  left: 75vw;
+}
+
+.miniature-anchor {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.top-bar {
+  background: linear-gradient(to bottom, #3875c2, #2d609d);
+  display: flex !important;
+  flex-direction: row;
+  height: 7vh;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 0 2.5vw;
+  font-size: 3vh;
+  a {
+    color: white;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  h1 {
+    margin-bottom: -1.4vh;
+    font-size: 3vh;
+  }
+  div {
+    color: transparent;
+  }
+}
+
+main {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #f1f3f2;
+}

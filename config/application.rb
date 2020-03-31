@@ -18,5 +18,6 @@ module RunnerCapstone
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
       html_tag
     }
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   end
 end
