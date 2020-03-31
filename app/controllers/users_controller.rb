@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       return
     end
     @user = User.find(params[:id])
-    return if @user.respond_to?(:transactions)
+    return unless @user.respond_to?(:transactions)
 
     @transactions = if params[:groupless]
                       @user.transactions.where(group_id: nil).order(:created_at).reverse_order
