@@ -51,17 +51,42 @@ If you have contributions to make, send me a message telling me about your ideas
 ### Setup
 
 Navigate to the project folder using your terminal.
-Instal gems with:
+Install gems with:
 
 ```
-bundle install
+$ bundle install
+```
+This project uses PostGreSQL, so you'll need to assign a PostGres User to it. Run this to create a new user:
+
+```
+$ sudo -u postgres createuser -s yourUserName -P
 ```
 
-Setup database with:
+Either if you're using a brand new user or an existing one, remember its username and password. Access `\config\database.yml` with your favorite text editor and go to line 24:
 
 ```
-   rails db:create
-   rails db:migrate
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: TYPE HERE THE USERNAME OF YOUR POSTGRES USER
+  password: <%= ENV['RUNNER_CAPSTONE_DATABASE_PASSWORD'] %>
+```
+
+Next, on your terminal, run the following:
+
+```
+$ echo 'export APPNAME_DATABASE_PASSWORD="PostgreSQL_Role_Password"' >> ~/.bashrc
+$ source ~/.bashrc
+```
+
+Now that your PostGreSQL user is set, setup database with:
+
+```
+$ rails db:create
+$ rails db:migrate
 ```
 
 ### Usage
