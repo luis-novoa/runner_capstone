@@ -94,7 +94,7 @@ $ rails db:migrate
 Start server with:
 
 ```
-    rails server
+$ rails server
 ```
 
 Open `http://localhost:3000/` in your browser.
