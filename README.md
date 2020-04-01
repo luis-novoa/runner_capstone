@@ -65,14 +65,14 @@ $ sudo -u postgres createuser -s yourUserName -P
 Either if you're using a brand new user or an existing one, remember its username and password. Access `\config\database.yml` with your favorite text editor and go to line 24:
 
 ```
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: TYPE HERE THE USERNAME OF YOUR POSTGRES USER
-  password: <%= ENV['RUNNER_CAPSTONE_DATABASE_PASSWORD'] %>
+18  default: &default
+19    adapter: postgresql
+20    encoding: unicode
+21    # For details on connection pooling, see Rails configuration guide
+22    # https://guides.rubyonrails.org/configuring.html#database-pooling
+23    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+24    username: TYPE HERE THE USERNAME OF YOUR POSTGRES USER
+25    password: <%= ENV['RUNNER_CAPSTONE_DATABASE_PASSWORD'] %>
 ```
 
 Next, on your terminal, run the following:
@@ -102,7 +102,7 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+$ rpsec --format documentation
 ```
 
 ## Author
