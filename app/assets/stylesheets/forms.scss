@@ -12,9 +12,11 @@
   background: white;
   color: #767676;
   height: 10vh;
-  border-bottom: solid #eaeaea7d;
   font-size: 2vh;
   margin-left: 5vw;
+  &:not(:last-child) {
+    border-bottom: solid #eaeaea7d;
+  }
   &:hover {
     outline: none;
   }
@@ -34,10 +36,28 @@
   }
 }
 
-.dropdown-icon {
-  font-family: FontAwesome;
-  font-style: normal;
-  option {
-    font-family: FontAwesome;
+.icon-select {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin-bottom: 0;
+  li {
+    display: flex;
+    flex: 1;
+  }
+  input {
+    display: none;
+    &:checked + label {
+      border: solid #3584e4;
+    }
+  }
+
+  label {
+    cursor: pointer;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    flex: 1;
+    margin-bottom: 0;
   }
 }

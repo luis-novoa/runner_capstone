@@ -11,39 +11,39 @@
     <%# f.select :icon, options_for_select([["&#xf554;".html_safe, 'walking'],["&#xf84a;".html_safe, 'biking'],["&#xf6f0;".html_safe, 'horse'],["&#xf21c;".html_safe,'motorcycle'],["&#xf5e4;".html_safe,'car-side'],["&#xf239;".html_safe, 'subway'],["&#xf21a;".html_safe, 'ship'],["&#xf072;".html_safe,'plane'],["&#xf197;".html_safe,'space-shuttle']]), {}, { class: 'dropdown-icon' } %>
     <ul class="icon-select">
       <li>
-        <%= f.radio_button :icon,  'walking '%>
+        <%= f.radio_button :icon, 'walking', checked: true %>
         <%= f.label :icon, "<i class='fas fa-walking'></i>".html_safe, value: 'walking' %>
       </li>
       <li>
-        <%= f.radio_button :icon,  'biking '%>
+        <%= f.radio_button :icon, 'biking'%>
         <%= f.label :icon, "<i class='fas fa-biking'></i>".html_safe, value: 'biking' %>
       </li>
       <li>
-        <%= f.radio_button :icon,  'horse '%>
+        <%= f.radio_button :icon, 'horse'%>
         <%= f.label :icon, "<i class='fas fa-horse'></i>".html_safe, value: 'horse' %>
       </li>
       <li>
-        <%= f.radio_button :icon,  'motorcycle '%>
+        <%= f.radio_button :icon, 'motorcycle'%>
         <%= f.label :icon, "<i class='fas fa-motorcycle'></i>".html_safe, value: 'motorcycle' %>
       </li>
       <li>
-        <%= f.radio_button :icon,  'car-side '%>
+        <%= f.radio_button :icon, 'car-side'%>
         <%= f.label :icon, "<i class='fas fa-car-side'></i>".html_safe, value: 'car-side' %>
       </li>
       <li>
-        <%= f.radio_button :icon,  'subway '%>
+        <%= f.radio_button :icon, 'subway'%>
         <%= f.label :icon, "<i class='fas fa-subway'></i>".html_safe, value: 'subway' %>
       </li>
       <li>
-        <%= f.radio_button :icon,  'ship '%>
+        <%= f.radio_button :icon, 'ship'%>
         <%= f.label :icon, "<i class='fas fa-ship'></i>".html_safe, value: 'ship' %>
       </li>
       <li>
-        <%= f.radio_button :icon,  'plane '%>
+        <%= f.radio_button :icon, 'plane'%>
         <%= f.label :icon, "<i class='fas fa-plane'></i>".html_safe, value: 'plane' %>
       </li>
       <li>
-        <%= f.radio_button :icon,  'space-shuttle '%>
+        <%= f.radio_button :icon, 'space-shuttle'%>
         <%= f.label :icon, "<i class='fas fa-space-shuttle'></i>".html_safe, value: 'space-shuttle' %>
       </li>
     </ul>
