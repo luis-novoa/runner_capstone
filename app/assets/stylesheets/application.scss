@@ -28,6 +28,8 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 a:hover {
