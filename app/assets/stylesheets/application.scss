@@ -26,10 +26,8 @@
 .full-page {
   width: 100vw;
   height: 100vh;
-  position: relative;
+  position: fixed;
   overflow: hidden;
-  min-width: 100vw;
-  min-height: 100vh;
 }
 
 a:hover {
