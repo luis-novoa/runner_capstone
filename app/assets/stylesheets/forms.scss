@@ -1,0 +1,63 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 4vh 0;
+  border-top: solid #eaeaea7d;
+  border-bottom: solid #eaeaea7d;
+  background: white;
+}
+
+.form > * {
+  border: none;
+  background: white;
+  color: #767676;
+  height: 10vh;
+  font-size: 2vh;
+  margin-left: 5vw;
+  &:not(:last-child) {
+    border-bottom: solid #eaeaea7d;
+  }
+  &:hover {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.formless-btn {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 2vh;
+  margin-bottom: -1vh;
+  &:focus {
+    outline: none;
+  }
+}
+
+.icon-select {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin-bottom: 0;
+  li {
+    display: flex;
+    flex: 1;
+  }
+  input {
+    display: none;
+    &:checked + label {
+      border: solid #3584e4;
+    }
+  }
+
+  label {
+    cursor: pointer;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    flex: 1;
+    margin-bottom: 0;
+  }
+}

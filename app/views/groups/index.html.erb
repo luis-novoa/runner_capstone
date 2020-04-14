@@ -1,0 +1,23 @@
+<header class="top-bar">
+  <%= link_to '', url_for(show_menu: true), class: "fas fa-bars" %>
+  <h1>ALL GROUPS</h1>
+  <div class="fas fa-bars"></div>
+</header>
+<main>
+  <% @all_groups.each do |group| %>
+    <%= link_to group_path(group) do %>
+      <div class="transaction">
+        <div class="line">
+          <span class='name'><%= group.name %></span>
+          <span class='date'><%= group.created_at.strftime("%d %b %Y") %></span>
+        </div>
+        <div class='icon-focus'>
+          <span class="icon"><%= content_tag(:i, '', class: "fas fa-#{group.icon}") %></span>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</main>
+<%= link_to create_group_path do %>
+  <div class='outer-square'><div class='inner-square'><span>CREATE NEW GROUP</span></div></div>
+<% end %>

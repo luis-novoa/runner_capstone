@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../app/assets/stylesheets/groups.scss"
+    ],
+    "names": [],
+    "file": "groups.css"
+}

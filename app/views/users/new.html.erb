@@ -1,0 +1,10 @@
+<%= error_messages %>
+<div class='login w-100 h-100'>
+  <h1 class='logo'>Runner</h1>
+
+  <%= form_for @user, html: { class: 'login-form' } do |f| %>
+    <%= f.text_field :name, placeholder: 'Username' %> <br>
+    <%= f.submit 'LOG IN', formaction: sessions_path, class: 'btn-primary' %>
+    <%= f.submit 'SIGN UP', class: 'sign-up-btn' %>
+  <% end %>
+</div>

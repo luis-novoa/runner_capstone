@@ -1,0 +1,17 @@
+<header>
+  <div class="top-bar">
+    <%= back_to_group_link %>
+    <h1 class='ml-4'> ADD NEW TRACK </h1>
+    <button class='formless-btn' type='submit' form='new-track-form'>Create</button>
+  </div>
+</header>
+<main>
+  <%= form_for @transaction, html: { class: 'form', id: 'new-track-form' } do |f| %>
+    <%= f.text_field :name, placeholder: 'Track Name' %>
+    <%= f.number_field :amount, placeholder: 'Distance in Kilometers (number)' %>
+    <%= f.select :group_id, options_for_select(@group_select, params[:group_id]) %>
+  <% end %>
+  <div>
+    <%= error_messages %>
+  </div>
+</main>
