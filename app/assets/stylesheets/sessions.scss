@@ -1,0 +1,53 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-color: #f1f3f2;
+}
+
+.logo {
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 7vh;
+  color: #434b54;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  input[type=submit] {
+    padding: 2vh 0;
+    &:focus {
+      outline: none;
+      box-shadow: none !important;
+    }
+  }
+
+  input[type=text] {
+    padding: 0 2vw;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.login-form > * {
+  font-size: 2.5vh;
+  height: 7vh;
+}
+
+.btn-primary {
+  border: none;
+  border-radius: 2px;
+}
+
+.sign-up-btn {
+  background: transparent;
+  border: none;
+  color: #434b54;
+}

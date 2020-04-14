@@ -1,0 +1,119 @@
+.sum {
+  height: 7vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 2.5vw;
+  border-bottom: solid #f1f3f2;
+  background: white;
+}
+
+.name {
+  font-weight: bold;
+  color: #989da2;
+  font-size: 1.9vh;
+}
+
+.date {
+  color: #989da2;
+  font-size: 1.4vh;
+}
+
+.amount {
+  font-size: 2vh;
+  font-weight: bold;
+  color: #434b54;
+}
+
+.icon {
+  text-align: center;
+  font-size: 2vh;
+  color: #434b54;
+}
+
+.transaction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 10vh;
+  width: 95vw;
+  margin: 2vh auto;
+  padding: 1.2vh 2vw;
+  background: white;
+}
+
+.line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.outer-square {
+  height: 14vh;
+  background-color: #5fb523;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.inner-square {
+  border: solid white;
+  font-size: 5vw;
+  text-decoration: none;
+  color: white;
+  border-radius: 3px;
+  height: 10vh;
+  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.icon-focus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.icon-focus span {
+  font-size: 5vh;
+}
+
+.user-index {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=indexes.css.map */

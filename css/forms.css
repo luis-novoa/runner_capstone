@@ -1,0 +1,53 @@
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 4vh 0;
+  border-top: solid #eaeaea7d;
+  border-bottom: solid #eaeaea7d;
+  background: white;
+}
+
+.form > * {
+  border: none;
+  background: white;
+  color: #767676;
+  height: 10vh;
+  border-bottom: solid #eaeaea7d;
+  font-size: 2vh;
+  margin-left: 5vw;
+}
+
+.form > *:hover {
+  outline: none;
+}
+
+.form > *:focus {
+  outline: none;
+}
+
+.formless-btn {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 2vh;
+  margin-bottom: -1vh;
+}
+
+.formless-btn:focus {
+  outline: none;
+}
+
+.dropdown-icon {
+  font-family: FontAwesome;
+  font-style: normal;
+}
+
+.dropdown-icon option {
+  font-family: FontAwesome;
+}
+/*# sourceMappingURL=forms.css.map */

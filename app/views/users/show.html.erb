@@ -1,0 +1,41 @@
+<header>
+  <div class="top-bar">
+    <% if params[:id].to_i == session[:user_id] %>
+      <%= link_to '', url_for(show_menu: true, groupless: params[:groupless]), class: "fas fa-bars" %>
+    <% else %>
+      <%= link_to '', users_path, class: 'fas fa-arrow-left' %>
+    <% end %>
+    <%= title %>
+    <div class="fas fa-bars"></div>
+  </div>
+  <div class='sum'>
+    <span class='name'>Total distance</span>
+    <% if @transactions %>
+      <span class='amount'><%= @transactions.sum(:amount) %> KM</span>
+    <% else %>
+      <span class='amount'>0 KM</span>
+    <% end %>
+  </div>
+</header>
+<main>
+<%#% debugger %>
+  <% if @transactions %>
+    <% @transactions.each do |transaction| %>
+      <div class="transaction">
+        <div class="line">
+          <span class='name'><%= transaction.name %></span>
+          <span class='date'><%= transaction.created_at.strftime("%d %b %Y") %></span>
+        </div>
+        <div class="line">
+          <span class='amount'><%= transaction.amount %> KM</span>
+          <span class='icon'><%= content_tag(:i, '', class: "fas fa-#{transaction.group.icon}") unless transaction.group.nil? %></span>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</main>
+<% if params[:id].to_i == session[:user_id] %>
+  <%= link_to new_transaction_path do %>
+    <div class='outer-square'><div class='inner-square'><span>ADD NEW TRACK</span></div></div>
+  <% end %>
+<% end %>

@@ -1,0 +1,39 @@
+.user-menu {
+  position: relative;
+  z-index: 0;
+  background: linear-gradient(to bottom left, #1e3763, #2a6fa4);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #ffffffb5;
+  font-size: 2vh;
+  nav {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15vw;
+    a:last-child {
+      border: none;
+    }
+  }
+  nav > * {
+    color: #ffffffb5;
+    border-bottom: #ffffff54 solid;
+    padding-bottom: 2vh;
+    margin-bottom: 2vh;
+    &:hover {
+      color: #ffffffb5;
+      text-decoration: none;
+    }
+  }
+}
+
+.user-name {
+  flex: 1;
+  span {
+    position: relative;
+    top: 25vh;
+    left: 25vw;
+  }
+}

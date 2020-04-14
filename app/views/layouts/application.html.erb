@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RunnerCapstone</title>
+    <title>Runner</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/4769bb681b.js"></script>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="full-page">
+      <% if params[:show_menu] %>
+        <div class="user-menu" id='user-menu'>
+          <div class="user-name">
+            <span><%= current_user.name %></span>
+          </div>
+          <nav>
+            <%= link_to 'ALL MY TRACKS', user_path(@user) %>
+            <%= link_to 'MY INDIVIDUAL TRACKS', user_path(@user, groupless: true) %>
+            <%= link_to 'ALL GROUPS', groups_path %>
+            <%= link_to 'OTHER USERS', users_path %>
+            <%= link_to 'LOG OUT', session_path(session[:session_id]), method: 'delete' %>
+          </nav>
+        </div>
+        <div class='wrapper' id='wrapper-miniature'>
+          <%= link_to '', url_for(show_menu: nil, groupless: params[:groupless]) , class: 'miniature-anchor' %>
+          <%= yield %>
+        </div>
+      <% else %>
+        <div class='wrapper' id='wrapper'>
+          <%= yield %>
+        </div>
+      <% end %>
+    </div>
+    <script>
+      var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1; //&& ua.indexOf("mobile");
+      if(isAndroid) {
+        document.write('<meta name="viewport" content="width=device-width,height='+window.innerHeight+', initial-scale=1.0">');
+      }
+    </script> 
   </body>
 </html>
