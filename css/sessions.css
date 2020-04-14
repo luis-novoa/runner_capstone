@@ -1,0 +1,68 @@
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #f1f3f2;
+}
+
+.logo {
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 7vh;
+  color: #434b54;
+}
+
+.login-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90vw;
+}
+
+.login-form input[type=submit] {
+  padding: 2vh 0;
+}
+
+.login-form input[type=submit]:focus {
+  outline: none;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.login-form input[type=text] {
+  padding: 0 2vw;
+}
+
+.login-form input[type=text]:focus {
+  outline: none;
+}
+
+.login-form > * {
+  font-size: 2.5vh;
+  height: 7vh;
+}
+
+.btn-primary {
+  border: none;
+  border-radius: 2px;
+}
+
+.sign-up-btn {
+  background: transparent;
+  border: none;
+  color: #434b54;
+}
+/*# sourceMappingURL=sessions.css.map */

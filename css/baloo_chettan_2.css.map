@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,OAAO,CAAC,+EAAI",
+    "sources": [
+        "../app/assets/fonts/baloo_chettan_2.scss"
+    ],
+    "names": [],
+    "file": "baloo_chettan_2.css"
+}
