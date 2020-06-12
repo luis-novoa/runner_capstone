@@ -6,6 +6,15 @@ Check the video with the overview of the project:
 
 [![](https://img.youtube.com/vi/Mpn0cbfoykM/0.jpg)](https://www.youtube.com/watch?v=Mpn0cbfoykM "Click to play on Youtube.com")
 
+## Features
+- Create an account or log in using the same form
+- Create entries
+- Create groups
+- Add entries to groups or leave them groupless
+- Check other people's activities
+
+## 
+
 ## Built With
 
 - Ruby v2.6.5
