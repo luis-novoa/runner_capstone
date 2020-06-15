@@ -229,9 +229,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionpack (>= 6.0.3.1)
-  activestorage (>= 6.0.3.1)
-  activesupport (>= 6.0.3.1)
   bootsnap (>= 1.4.2)
   bootstrap (~> 4.4.1)
   byebug
@@ -254,7 +251,6 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
-  websocket-extensions (>= 0.1.5)
 
 RUBY VERSION
    ruby 2.6.5p114
