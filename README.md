@@ -13,7 +13,7 @@ Check the video with the overview of the project:
 - Add entries to groups or leave them groupless
 - Check other people's activities
 
-## Future improvements
+## Future Improvements
 - Create a desktop version
 - Implement friendships
 - Create secret groups with friends
